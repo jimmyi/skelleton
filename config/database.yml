@@ -1,0 +1,15 @@
+common: &common
+  adapter: postgresql
+  username: _postgres
+  password:
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *common
+  database: skelleton_dev
+
+test: &test
+  <<: *common
+  database: skelleton_test
+
