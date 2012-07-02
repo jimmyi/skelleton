@@ -2,4 +2,8 @@
   .eight.columns
     Main content...
   .four.columns
-    Sidebar...
+    - if user_signed_in?
+      = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'button'
+    - else
+      %a.button{:href => new_user_session_path} Login/Register
+
